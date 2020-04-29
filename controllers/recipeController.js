@@ -1,10 +1,18 @@
-const recipeModel = require('../models/recipe');
+const recipe = require('../models/recipe');
 
 
-module.exports = function(app) {
+module.exports = function (app) {
     // GET HANDLERS
-    app.get('/', function(req, res) {
-        res.render('home');
+    app.get('/', async function (req, res) {
+        const recipesFromDb = await recipes(req, res);
+        res.render('home', { data : recipesFromDb});
+
     });
 
 };
+
+
+async function recipes(req, res) {
+    var x = await recipe.getAllRecipes();
+    return x;
+}
