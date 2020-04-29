@@ -1,2 +1,1 @@
-# iChef
-iChef is a meal-kit startup
+# ia_project
