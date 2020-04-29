@@ -6,9 +6,7 @@ module.exports = function (app) {
     app.get('/', async function (req, res) {
         const recipesFromDb = await recipes(req, res);
         res.render('home', { data : recipesFromDb});
-
     });
-
 };
 
 
